@@ -1,14 +1,14 @@
 var captureGraphics
+var radioElement
 var capture_width=640
 var capture_height=480
 var span=10
-var radioElement=createRadio
 
 function setup() { 
   createCanvas(windowWidth, windowHeight);
   capture = createCapture(VIDEO) //啟動攝影機
   capture.size(capture_width,capture_height);//設定顯示畫面大小
-  captureGraphics=captureGraphics(capture_width,capture_height)
+  captureGraphics=createGraphics(capture_width,capture_height)
   captureGraphics.translate(capture_width,0)
   captureGraphics.scale(-1,1)
   capture.hide()
@@ -19,7 +19,7 @@ function setup() {
   radioElement.option("方塊")
   radioElement.option("圓圈")
   radioElement.style("color","#fff")
-  
+
 }
 
 function draw() {
